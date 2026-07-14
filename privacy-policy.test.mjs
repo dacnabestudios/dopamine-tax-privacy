@@ -32,6 +32,15 @@ test("publishes one complete multilingual Dopamine Tax privacy policy", () => {
   ]) {
     assert.match(html, new RegExp(topic, "i"));
   }
+
+  for (const ageStatement of [
+    "people aged 13 or older",
+    "pessoas com 13 anos ou mais",
+    "personas de 13 años o más",
+    "personnes âgées de 13 ans ou plus",
+  ]) {
+    assert.match(html, new RegExp(ageStatement, "i"));
+  }
 });
 
 test("keeps the policy static, HTTPS-only, and free from product tracking", () => {
